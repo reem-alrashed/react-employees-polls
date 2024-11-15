@@ -1,26 +1,24 @@
-import {connect} from "react-redux";
-import {Navigate} from "react-router-dom";
-import {useState} from "react";
-import {handleLogin} from "../actions/authedUser";
+import { connect } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import { handleLogin } from "../actions/authedUser";
 
-const Login = ({dispatch, isLoggedin}) => {
+const Login = ({ dispatch, isLoggedin }) => {
     const [username, setUsername] = useState("reem");
     const [password, setPassword] = useState("password123");
 
     if (isLoggedin) {
         const urlParams = new URLSearchParams(window.location.search);
         const redirectUrl = urlParams.get('redirectTo');
-        return <Navigate to={redirectUrl ? redirectUrl : "/"}/>;
+        return <Navigate to={redirectUrl ? redirectUrl : "/"} />;
     }
 
     const handleUsername = (e) => {
-        const value = e.target.value;
-        setUsername(value);
+        setUsername(e.target.value);
     };
 
     const handlePassword = (e) => {
-        const value = e.target.value;
-        setPassword(value);
+        setPassword(e.target.value);
     };
 
     const handleSubmit = (e) => {
@@ -31,12 +29,14 @@ const Login = ({dispatch, isLoggedin}) => {
     };
 
     return (
-        <div>
-            <h1 className="text-2xl font-bold" data-testid="login-heading">Login</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username" className="block">Username</label>
-                    <div className="m-1">
+        <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600">
+            <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+                <h1 className="text-3xl font-bold text-center text-gray-800 mb-6" data-testid="login-heading">
+                    Welcome Back!
+                </h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-4">
+                        <label htmlFor="username" className="block text-lg font-medium text-gray-700">Username</label>
                         <input
                             value={username}
                             onChange={handleUsername}
@@ -44,12 +44,11 @@ const Login = ({dispatch, isLoggedin}) => {
                             name="username"
                             id="username"
                             data-testid="username"
-                            className="p-4 bg-white border border-slate-300 placeholder-slate-400  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:shadow-none"/>
+                            className="mt-2 w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                        />
                     </div>
-                </div>
-                <div className="mt-6">
-                    <label htmlFor="password" className="block">Password</label>
-                    <div className="mt-1">
+                    <div className="mb-6">
+                        <label htmlFor="password" className="block text-lg font-medium text-gray-700">Password</label>
                         <input
                             value={password}
                             onChange={handlePassword}
@@ -57,22 +56,25 @@ const Login = ({dispatch, isLoggedin}) => {
                             name="password"
                             id="password"
                             data-testid="password"
-                            className="p-4 bg-white border border-slate-300 placeholder-slate-400  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:shadow-none"/>
+                            className="mt-2 w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                        />
                     </div>
-                </div>
-                <div className="mt-6 text-right">
-                    <button type="submit"
+                    <div className="text-center">
+                        <button
+                            type="submit"
                             data-testid="submit"
-                            className="bg-sky-400 hover:bg-sky-700 px-5 py-2 text-sm rounded-md font-semibold text-white">
-                        Login
-                    </button>
-                </div>
-            </form>
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold text-lg transition duration-200"
+                        >
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };
 
-const mapStateToProps = ({authedUser}) => ({
+const mapStateToProps = ({ authedUser }) => ({
     isLoggedin: !!authedUser,
 });
 

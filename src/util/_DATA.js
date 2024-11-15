@@ -1,9 +1,9 @@
 let users = {
   reem: {
     id: 'reem',
-    password:'password123',
-    name: 'Sarah Edo',
-    avatarURL: 'https://github.com/sarah.png',
+    password: 'password123',
+    name: 'Reem',
+    avatarURL: 'https://ui-avatars.com/api/?name=Reem&background=random&color=fff', // random avatar with name 'Reem'
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -12,22 +12,22 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  tylermcginnis: {
-    id: 'tylermcginnis',
-    password:'abc321',
-    name: 'Tyler McGinnis',
-    avatarURL: 'https://github.com/tyler.png',
+  Tyler: {
+    id: 'Tyler',
+    password: 'abc321',
+    name: 'Tyler',
+    avatarURL: 'https://ui-avatars.com/api/?name=Tyler&background=random&color=fff', // random avatar with name 'Tyler'
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  mtsamis: {
-    id: 'mtsamis',
-    password:'xyz123',
-    name: 'Mike Tsamis',
-    avatarURL: 'https://github.com/mike.png',
+  Mike: {
+    id: 'Mike',
+    password: 'xyz123',
+    name: 'Mike',
+    avatarURL: 'https://ui-avatars.com/api/?name=Mike&background=random&color=fff', // random avatar with name 'Mike'
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -36,16 +36,17 @@ let users = {
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
   },
   zoshikanlu: {
-    id: 'zoshikanlu',
-    password:'pass246',
-    name: 'Zenobia Oshikanlu',
-    avatarURL: 'https://github.com/zenobia.png',
+    id: 'jessikka',
+    password: 'pass246',
+    name: 'Jessika',
+    avatarURL: 'https://ui-avatars.com/api/?name=Jessika&background=random&color=fff', // random avatar with name 'Zenobia Oshikanlu'
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
     },
     questions: [],
   }
 }
+
 
 let questions = {
   "8xf0y6ziyjabvozdd253nd": {
@@ -63,14 +64,14 @@ let questions = {
   },
   "6ni6ok3ym7mf1p33lnez": {
     id: '6ni6ok3ym7mf1p33lnez',
-    author: 'mtsamis',
+    author: 'Mike',
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
       text: 'hire more frontend developers',
     },
     optionTwo: {
-      votes: ['mtsamis', 'reem'],
+      votes: ['Mike', 'reem'],
       text: 'hire more backend developers'
     }
   },
@@ -89,7 +90,7 @@ let questions = {
   },
   "loxhs1bqm25b708cmbf3g": {
     id: 'loxhs1bqm25b708cmbf3g',
-    author: 'tylermcginnis',
+    author: 'Tyler',
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
@@ -102,27 +103,27 @@ let questions = {
   },
   "vthrdm985a262al8qx3do": {
     id: 'vthrdm985a262al8qx3do',
-    author: 'tylermcginnis',
+    author: 'Tyler',
     timestamp: 1489579767190,
     optionOne: {
-      votes: ['tylermcginnis'],
+      votes: ['Tyler'],
       text: 'take a course on ReactJS',
     },
     optionTwo: {
-      votes: ['mtsamis'],
+      votes: ['Mike'],
       text: 'take a course on unit testing with Jest'
     }
   },
   "xj352vofupe1dqz9emx13r": {
     id: 'xj352vofupe1dqz9emx13r',
-    author: 'mtsamis',
+    author: 'Mike',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['mtsamis', 'zoshikanlu'],
+      votes: ['Mike', 'zoshikanlu'],
       text: 'deploy to production once every two weeks',
     },
     optionTwo: {
-      votes: ['tylermcginnis'],
+      votes: ['Tyler'],
       text: 'deploy to production once every month'
     }
   },

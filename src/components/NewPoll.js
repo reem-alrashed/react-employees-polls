@@ -1,79 +1,87 @@
-import {connect} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {useState} from "react";
-import {handleAddQuestion} from "../actions/questions";
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { handleAddQuestion } from "../actions/questions";
 
-const NewPoll = ({dispatch}) => {
-    const navigate = useNavigate();
-    const [firstOption, setFirstOption] = useState("");
-    const [secondOption, setSecondOption] = useState("");
+const NewPoll = ({ dispatch }) => {
+  const navigate = useNavigate();
+  const [firstOption, setFirstOption] = useState("");
+  const [secondOption, setSecondOption] = useState("");
 
-    const handleFirstOptionChange = (e) => {
-        const value = e.target.value;
-        setFirstOption(value);
-    };
+  const handleFirstOptionChange = (e) => {
+    const value = e.target.value;
+    setFirstOption(value);
+  };
 
-    const handleSecondOptionChange = (e) => {
-        const value = e.target.value;
-        setSecondOption(value);
-    };
+  const handleSecondOptionChange = (e) => {
+    const value = e.target.value;
+    setSecondOption(value);
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(handleAddQuestion(firstOption, secondOption));
-        navigate("/");
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(handleAddQuestion(firstOption, secondOption));
+    navigate("/");
+  };
 
-    return (
-        <div>
-            <h1 className="text-3xl font-bold mt-9">
-                New Poll
-                </h1>
-            <form onSubmit={handleSubmit}>
+  return (
+    <div className="min-h-screen bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 flex justify-center items-center py-12">
+      <div className="bg-white p-10 rounded-xl shadow-xl w-full max-w-lg">
+        <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">
+          Create a New Poll
+        </h1>
+        <form onSubmit={handleSubmit}>
+          {/* First Option Input */}
+          <div className="mb-6">
+            <label
+              htmlFor="firstOption"
+              className="block text-lg font-semibold text-slate-700 mb-2"
+            >
+              First Option
+            </label>
+            <input
+              value={firstOption}
+              onChange={handleFirstOptionChange}
+              type="text"
+              name="firstOption"
+              id="firstOption"
+              className="w-full p-4 border-2 border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400 transition duration-300"
+              placeholder="Enter first option"
+            />
+          </div>
 
-                <div className="mt-3">
-                    <label htmlFor="firstOption"
-                           data-testid="firstOptionLabel"
-                           className="block text-sm font-medium text-slate-700">First Option</label>
-                    <div className="mt-1">
-                        <input
-                            value={firstOption}
-                            onChange={handleFirstOptionChange}
-                            type="text"
-                            name="firstOption"
-                            id="firstOption"
-                            data-testid="firstOption"
-                            className="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:shadow-none"/>
-                    </div>
-                </div>
+          {/* Second Option Input */}
+          <div className="mb-6">
+            <label
+              htmlFor="secondOption"
+              className="block text-lg font-semibold text-slate-700 mb-2"
+            >
+              Second Option
+            </label>
+            <input
+              value={secondOption}
+              onChange={handleSecondOptionChange}
+              type="text"
+              name="secondOption"
+              id="secondOption"
+              className="w-full p-4 border-2 border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400 transition duration-300"
+              placeholder="Enter second option"
+            />
+          </div>
 
-                <div className="mt-3">
-                    <label htmlFor="secondOption"
-                           data-testid="secondOptionLabel"
-                           className="block text-sm font-medium text-slate-700">Second Option</label>
-                    <div className="mt-1">
-                        <input
-                            value={secondOption}
-                            onChange={handleSecondOptionChange}
-                            type="text"
-                            name="secondOption"
-                            id="secondOption"
-                            data-testid="secondOption"
-                            className="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:shadow-none"/>
-                    </div>
-                </div>
-
-                <div className="mt-6 text-right">
-                    <button type="submit"
-                            data-testid="submit-poll"
-                            className="bg-sky-500 hover:bg-sky-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
-                        Submit
-                    </button>
-                </div>
-
-            </form>
-        </div>
-    );
+          {/* Submit Button */}
+          <div className="mt-8 text-center">
+            <button
+              type="submit"
+              className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+            >
+              Submit Poll
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default connect()(NewPoll);
