@@ -1,10 +1,17 @@
 # Employee Polls Project
 
-This is the starter code for the final assessment project for Udacity's React & Redux course.
+This project is part of the final assessment for the [Udacity React & Redux course](https://www.udacity.com/course/react-redux--nd019). The goal is to build a React/Redux application that interacts with a fake database, allowing users to create and answer polling questions.
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
+## Project Overview
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
+The application allows users to:
+
+- View polling questions.
+- Answer polling questions.
+- Create new polling questions.
+- View results of questions they answered.
+
+The fake database (`_DATA.js`) stores information about users and questions. You can modify and interact with this database through provided methods.
 
 ## Data
 
