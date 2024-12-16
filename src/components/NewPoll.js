@@ -75,7 +75,7 @@ const NewPoll = ({ dispatch }) => {
               type="submit"
               className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
             >
-              Submit Poll
+              Submit
             </button>
           </div>
         </form>

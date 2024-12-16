@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 
 const PageNotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-400 via-yellow-400 to-orange-500 flex justify-center items-center p-4">
-      <div className="bg-white p-10 rounded-xl shadow-xl max-w-md w-full text-center">
+    <div className="min-h-screen bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 flex justify-center items-center py-12">
+    <div className="bg-white p-10 rounded-xl shadow-xl max-w-md w-full text-center">
         <h1 className="text-6xl font-extrabold text-gray-800 mb-4 animate__animated animate__fadeIn">
           404
         </h1>

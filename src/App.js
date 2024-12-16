@@ -20,7 +20,7 @@ function App({ dispatch, isLoggedin }) {
     return (
         <div>
             {isLoggedin && <Nav />}
-            <div className={`mt-8 ${!isLoggedin ? 'mt-0' : ''}`}> {/* Add conditional margin */}
+            <div className={`mt-2 ${!isLoggedin ? 'mt-0' : ''}`}> {/* Add conditional margin */}
                 <Routes>
                     <Route path="/login" exact element={<Login />} />
                     <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
